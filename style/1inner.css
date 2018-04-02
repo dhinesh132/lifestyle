@@ -1,0 +1,290 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body { background:url(../images/bg.jpg) repeat-x; }
+a:hover { color:#ff6000}
+a { text-decoration:none;}
+
+@font-face {
+				font-family: 'DINNextLTPro-Light';
+				src:     url('../fonts/dinnextltpro-light.svg#dinnextltpro-light') format('svg'),
+						 url('../fonts/dinnextltpro-light.eot') format('embedded-opentype'),
+						 url('../fonts/dinnextltpro-light.woff') format('woff'),
+						 url('../fonts/dinnextltpro-light.ttf') format('truetype'),
+						 url('../fonts/dinnextltpro-light-webfont.ttf') format('truetype');						 
+				font-weight: normal;
+				font-style: normal;
+		}
+
+#container { width:980px; margin:0 auto; font-family:'DINNextLTPro-Light';  color:#807b5f; font-size:13px;}
+
+/*HEADER*/
+#header {background:url(../images/header.png) no-repeat; height:175px; width:980px; float:left}
+
+.top {width:980px; height:104px; float:left;}
+#header-left {width:626px; height:79px; float:left; padding-top:25px;}
+
+#header-right {width:354px; height:88px; float:right; padding-top:16px}
+#search{ width:354px; height:30px; margin-bottom:20px;}
+.search { background:url(../images/searc-bar.png); width:198px; height:23px; float:left; padding:7px 3px 0 13px;}
+
+.social { width:144px; float:left; padding-right:6px}
+.cart { width:350px; text-align:right; font-size:12px; font-family:'DINNextLTPro-Light'; padding-right:4px;}
+.cart a {color:#807b5f;}
+.cart a:hover{color:#ff6000}
+.cart  em { color:#FF6633; font-style:normal; margin-right:20px}
+
+/*NAVIGATION*/
+.navigation { width:980px; float:left; }
+.navigation { width:980px; float:left; }
+#nav{ height:24px;  margin: 0 auto; list-style-type:none; padding:16px 0 0 40px;}
+#widget {margin: 0 auto;list-style-type:none;}
+#widget li {float: left; width:120px;}
+#widget li a:link, ul#widget li a:visited {display: block; text-decoration: none;font-size: 14px; font-family:'DINNextLTPro-Light'; color:#807b5f; margin-bottom:12px;}
+ul#widget li a:hover { color:#ff6600!important; }
+ul#widget li#selected a:link, ul#widget li#selected a:visited {background: #e0dfd0; text-decoration: none;font-size: 14px;	font-family:'DINNextLTPro-Light';}
+
+
+/*----for navigation dropdown--*/
+#nav ul li.nav_text{position: relative;	z-index:1000;}
+#nav ul li.nav_text ul{display:none; }
+#nav ul li.nav_text:HOVER ul{display:block;	position: absolute;background:#e7deb8;width:153px; height:30px!important}
+#nav ul li.nav_text ul li{display: block;clear: both; background:#f6f5ef; border-bottom: 1px solid #e0dfd0;margin: 0 !important; padding: 0; font-family:'DINNextLTPro-Light'; width:153px;
+                          height:30px!important}
+#nav ul li.nav_text ul li:hover{background:#e7deb8; height:30px!important;}	
+#nav ul li.nav_text ul li:hover a{color:#FFFFFF!important; background:#fe9147; height:22px!important; border-bottom: 1px solid #e0dfd0; padding:8px 0 0 8px;}
+#nav ul li.nav_text ul li a{display: block; width:145px; text-align:left; font-size:13px;height:22px!important; padding:8px 0 0 8px; margin:0!important; color:#807b5f; background:#f7f4e7; }
+
+
+/*SLIDER*/
+#slider {width:960px; height:357px; float:left; background:#f6f4e6; padding:10px 5px 10px 13px}
+.slider-container { background:#FFFFFF; width:949px; float:left; margin:0; padding:3px 0 3px 3px}
+ul#accordion-slider{
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ position: relative;
+}
+ul#accordion-slider li{
+ display: block;
+ overflow: hidden;
+ padding: 0;
+ float: left;
+ width: 235px;
+ height: 350px;
+}
+
+/*SELECTION*/
+/* setting the width and height of the SELECT element to match the replacing graphics */
+select.select{
+		position:relative;
+		z-index:10;
+		min-width:20px !important;
+		height:24px !important;
+		line-height:24px;
+		/*background: url("../images/arrow.png") no-repeat scroll right center #FFFFFF;*/
+		border: 1px solid #D4CA9A;
+		/*-moz-appearance: none; 
+		-webkit-appearance: none;
+		appearance: none;
+		font-family:'DINNextLTPro-Light'; */
+		margin-bottom: 4px;		
+		color:#726640;
+		font-size:12px;
+		padding:0px 0px 0px 2px;
+		
+}
+
+/* dynamically created SPAN, placed below the SELECT */
+span.select{
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	min-width:20px;
+    height:24px;
+	line-height:24px;
+	text-indent:10px;
+	background: url("../images/arrow.png") no-repeat scroll right center #FFFFFF;
+	cursor:default;
+	z-index:1;
+	/*-moz-appearance: none; 
+		-webkit-appearance: none;
+		appearance: none;*/
+
+	}
+	
+
+/*CONTENT*/
+#content{width:980px; float:left; margin-top:10px}
+#content a { color:#807b5f; font-family:'DINNextLTPro-Light'; font-size:13px;}
+#content hr { background-color:#eeead8; height:2px; border:0; margin-bottom:10px;}
+.title-bar {height:27px; font-family:'DINNextLTPro-Light'; font-size:16px; color:#ffffff; padding-top:7px; margin-bottom:10px;}
+.title-header { width:656px; height:130px; background:#f5f2e3; margin-bottom:10px; padding:11px 12px 11px 17px}
+
+#product-detail { width:980px; float:left!important; min-height:450px; height:auto; margin-bottom:15px; position:absolute}
+#product-detail .left { width:532px; float:left;}
+#product-detail .left p { text-align:center;}
+#product-detail .right { width:433px; float:right; padding:6px 0 0 15px}
+#product-detail .right  em { color:#ff6000; font-style:normal;}
+#product-detail .right  strong { font-weight:bold;}
+
+.left { width:282px; float:left; }
+.left h1 {font-family:'DINNextLTPro-Light'; font-size:16px; color:#807b5f; font-weight:bold}
+.left h2 {font-family:'DINNextLTPro-Light'; font-size:14px; color:#807b5f; font-weight:bold}
+.brown-box {min-width:223px;  background:#f6f1dd; padding:10px 10px 10px 10px; line-height:16px;} 
+.price-bar { width:223px; height:15px; background:url(../images/price-line.png) repeat-x; margin-bottom:5px;}
+.lightbrown-bg { width:244px; float:left; margin-bottom:10px;}
+.lightbrown-bg li { width:244px; height:23px; display:block; background:#f7f3e2; border-bottom:1px #FFFFFF solid; float:left; padding-top:3px}
+.left .products { width:243px; float:left; margin:10px 0 10px 0;}
+.left .products li { width:260px; height:22px; display:block; background:url(../images/bar.jpg) no-repeat; font-family:'DINNextLTPro-Light'; font-size:13px;
+                      color:#807b5f; padding:8px 0 0 20px;}
+.left .products li a {color:#807b5f;}
+.left .products li a:hover { color:#ff6600!important; }
+
+.brown-bg { width:665px; background:url(../images/bar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 5px 0 24px;}
+.brown-bg li { width:150px; list-style:none; float:left; display:inline; margin:0 10px 10px 0; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px;}
+.brown-bg li strong { font-weight:bold; font-size:14px;}
+.brown-bg li em { color:#ff6000; font-style:normal;}
+
+.brown-bgs { width:665px; background:url(../images/bar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 5px 0 24px;margin-top:10px;}
+.brown-bgs li { width:150px; list-style:none; float:left; display:inline; margin:0 10px 10px 0; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px;}
+.brown-bgs li strong { font-weight:bold; font-size:14px;}
+.brown-bgs li em { color:#ff6000; font-style:normal;}
+
+.brown-bgb { width:950px; background:url(../images/bbar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 5px 0 24px; margin-top:500px;}
+.brown-bgb li { width:150px; list-style:none; float:left; display:inline; margin:0 20px 10px 0; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px;}
+.brown-bgb li strong { font-weight:bold; font-size:14px;}
+.brown-bgb li em { color:#ff6000; font-style:normal;}
+
+#products { width:685px; float:left;}
+.products-list { width:160px; float:left; margin:0 11px 10px 0; height:200px;} 
+.product-bg { width:150px; height:124px; border:2px #d3ccb1 solid; background:#FFFFFF; margin-bottom:10px;}
+.product-detail {width:530px; height:430px; border:2px #d3ccb1 solid; background:#FFFFFF; margin-bottom:10px; }
+
+.right { width:685px; float:right; padding-left:9px}
+.right h1 { font-size:20px; font-weight:bold; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:24px;}
+.right ul > li:last-child { margin:0;}
+.right li { width:150px; list-style:none; float:left; display:inline; margin:0 25px 10px 0; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px;}
+.right strong { font-weight:bold; font-size:14px; line-height:16px;}
+.right em { color:#ff6000; font-style:normal;}
+
+/*TABLE*/
+.registration { width:687px; float:left;}
+.registration table { width:680px; border-top:1px #efead4 solid; border-left:1px #efead4 solid;}
+.registration table td {border-bottom:1px #efead4 solid; border-right:1px #efead4 solid; padding:5px 0 5px 10px; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; 
+                        color:#807b5f}
+.registration table .light-bg { background:#fbf8e9}
+.registration table input { border:1px #D4CA9A solid;font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; width:200px; margin-right:5px; height:20px}
+
+
+.domtab table { width:680px; border-top:1px #efead4 solid; border-left:1px #efead4 solid;}
+.domtab table td {border-bottom:1px #efead4 solid; border-right:1px #efead4 solid; padding:5px 5px 5px 5px!important; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; 
+                        color:#807b5f; text-align:left}
+.domtab table .light-bg { background:#fbf8e9}
+.domtab table input { border:1px #D4CA9A solid;font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; width:200px; margin-right:5px; height:20px}
+
+
+
+.sbrown-bg { width:243px; background:url(../images/sbar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 15px 0 24px; float:left; }
+.orange-bg { width:255px; height:212px; background:url(../images/orange-bg.png) no-repeat; margin-left:6px; float:left; padding:12px 10px 12px 10px;
+             font-family:'DINNextLTPro-Light'; font-size:12.5px; margin-top: 10px; }
+.orange-bg h1 { font-size:25px; color:#FFFFFF; font-family:'DINNextLTPro-Light'; }
+.orange-bg input { margin-bottom:4px; width:240px; color:#807b5f; height:28; font-size:13px; font-family:'DINNextLTPro-Light';}
+
+
+/*SIGN IN*/
+#sign-in { background:url(../images/sign-in.png) no-repeat; width:600px; height:225px; margin:0 auto; padding-top:50px; color:#807b5f; font-size:14px;}
+.sign-left {width:330px; float:left; padding-left:30px;}
+.sign-right {width:230px; float:right; padding-left:10px}
+#sign-in h1 {font-family:'DINNextLTPro-Light'; font-size:24px; color:#807b5f; line-height:28px; }
+#sign-in input { border:1px #D4CA9A solid;font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; width:200px; margin-right:5px; height:20px}
+.sign-right a { color:#807b5f;}
+.sign-left a { color:#FFFFFF;}
+
+
+/*FOOTER*/
+#footer {width:940px; height:175px; background:url(../images/fbg.png) repeat-x; float:left; margin-top:20px; padding:20px 20px 20px 20px; }
+#footer li  { width:160px; float:left; font-size:13px; font-family:'DINNextLTPro-Light'; line-height:16px;}
+#footer li a {display:inline; color:#807b5f; font-size:13px; font-family:'DINNextLTPro-Light'; line-height:16px; text-decoration:none;}
+#footer li a:hover {color:#ff6600;}
+#footer li strong { font-weight:bold; color:#807b5f; font-size:14px; font-family:'DINNextLTPro-Light';  line-height:25px}
+#footer li strong a {color:#807b5f; font-size:14px; font-family:'DINNextLTPro-Light'; line-height:25px;}
+
+
+
+
+
+
+/*SHOPPING CART*/
+.shopping-cart {width:685px; float:left; margin-bottom:10px;}
+.shopping-cart table{border-top:1px #efead4 solid; border-left:1px #efead4 solid;}
+.shopping-cart th { background:#fbf8e9; border-right:1px #efead4 solid; border-bottom:1px #efead4 solid; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; padding:6px 0 6px 0;}
+.shopping-cart th:first-child { padding-left:10px;}
+.shopping-cart td {border-bottom:1px #efead4 solid;  padding:10px 0 10px 0; text-align:center; vertical-align:top;}
+.shopping-cart tr td:last-child {border-right:1px #efead4 solid;}
+.shopping-cart tr td:first-child {padding-left:10px; text-align:left;}
+.shopping-cart td em a{ line-height:20px; text-decoration:underline;}
+#cart-bg { width:686px; height:36px; }
+#cart-bg table  { border:none;}
+#cart-bg table td { border:none; text-align:center; font-family:'DINNextLTPro-Light'; font-size:16px;; padding-top:10px;}
+.total { width:685px; float:left; margin-top:4px;}
+.total table, .total table td { border:none; border-right:none!important; padding:10px 0 10px 0; margin:0;}
+.total table input{ border:1px #D4CA9A solid;font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; width:110px; margin:2px 5px 0 0; height:20px}
+.border {width:76px; height:60px; border:1px #d3ccb1 solid; background:#FFFFFF; margin-right:10px;}
+.total-td {text-align:right!important; background:#fbf8e9; vertical-align:middle!important}
+
+
+/*shipping table*/
+
+.shippingtable {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width:400px;
+}
+
+.shippingtable tr {
+	
+}
+
+.shippingtable th {
+	background: #d8c793;
+	font-weight: normal;
+}
+
+.shippingtable td {
+	background: #e9e1bc;
+	text-align: center;
+}
+
+
+
+#shippingcalc{
+	border:0px;
+	padding: 5px 5px;
+	
+}
+#shippingcalc table { width:400px; border-top:1px #efead4 solid; border-left:1px #efead4 solid;}
+#shippingcalc table td {border-bottom:1px #efead4 solid; border-right:1px #efead4 solid; padding:2px 2px 2px 3px!important; font-size:13px; font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; 
+                        color:#807b5f; text-align:left}
+#shippingcalc table .light-bg { background:#fbf8e9}
+#shippingcalc table input { border:1px #D4CA9A solid;font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; width:200px; margin-right:5px; height:20px}
+
+/*SIGN IN*/
+#shipping-box { background:#FFFFFF; no-repeat; width:500px; height:255px; margin:0 auto; padding-top:20px;padding-bottom:15px; color:#807b5f; font-size:14px;}
+
+#shipping-box h1 {font-family:'DINNextLTPro-Light'; font-size:24px; color:#807b5f; line-height:28px; }
+#shipping-box input { border:1px #D4CA9A solid;font-family:'DINNextLTPro-Light'; color:#807b5f; line-height:16px; width:200px; margin-right:5px; height:20px}
+
+.shipping-heading {
+	font-weight: bold;
+	color:#000;	
+}
+
+.currentpagelink {font-family:'DINNextLTPro-Light'; text-align:center; color:#807b5f; font-size:12px; padding:3px 6px; background:#ffffff}
+
+.pagelink {font-family:'DINNextLTPro-Light'; text-align:center; color:#807b5f; font-size:12px; padding:3px 6px; background:#fff6d2}
+
+#forgotpwd {  font-size:16px; font-family:'DINNextLTPro-Light'; padding-right:4px;}
+#forgotpwd a {font-size:16px;color:#807b5f;}
+#forgotpwd a:hover{font-size:16px;color:#ff6000}

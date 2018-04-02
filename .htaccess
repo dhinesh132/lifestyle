@@ -1,0 +1,41 @@
+RewriteEngine On
+#RewriteCond %{HTTPS} !^on$
+#RewriteRule (.*) https://www.emblemsoffortune.com/$1 [R,L]
+
+RewriteRule  publications/([^/\.]+)/?$ publications_lists.php?key=$1 [L]
+
+RewriteRule  publications?$ publications_lists.php [L]
+
+RewriteRule  emblems/([^/\.]+)/?$ product_lists.php?key=$1 [L]
+
+RewriteRule  publications/([^/\.]+)/?$ publication_lists.php?key=$1 [L]
+
+RewriteRule  product/([^/\.]+)/?$ product_detail.php?key=$1 [L]
+
+RewriteRule  login?$ cust_login.php [L]
+
+RewriteRule  forgot-password/?$ forgotpassword.php?key=forgot-password [L]
+
+RewriteRule  logout?$ logout.php [L]
+
+RewriteRule  account/edit?$ cust_edit_details.php [L]
+
+RewriteRule  account/create?$ register.php [L]
+
+RewriteRule  account/editpassword?$ edit_password.php [L]
+
+RewriteRule  account/create?$ register.php [L]
+
+RewriteRule  myaccount?$ myaccount.php [L]
+
+RewriteRule  cart?$ basket.php [L]
+
+RewriteRule  shipping-billing-info?$ ship_bill.php [L]
+
+RewriteRule  cart-overview?$ payment.php [L]
+
+RewriteRule  invoice/([^/\.]+)/?$ invoice.php?order_id=$1 [L]
+
+RewriteRule  promotion/([^/\.]+)/?$ promotion_content.php?key=$1 [L]
+
+RewriteRule  index/([^/\.]+)/?$ page_content.php?key=$1 [L]

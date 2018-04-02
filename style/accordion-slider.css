@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.slider-container { background:#FFFFFF; width:949px; float:left; margin:0; padding:3px 0 3px 3px}
+ul#accordion-slider{
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ position: relative;
+}
+ul#accordion-slider li{
+ display: block;
+ overflow: hidden;
+ padding: 0;
+ float: left;
+ width: 235px;
+ height: 350px;
+}

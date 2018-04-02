@@ -1,0 +1,1557 @@
+.login_fld {
+font-family:Century Gothic;
+color:#666666;
+font-size:12px;
+font-style:normal;	
+}
+.login_link {
+font-family:Century Gothic;
+color:#666666;
+font-size:12px;
+text-decoration:none;
+font-style:normal;	
+
+}
+.login_link:hover {
+font-family:Century Gothic;
+color:#666666;
+font-size:12px;
+text-decoration:underline;
+font-style:normal;	
+}
+.login {
+font-family:Century Gothic;
+color:#666666;
+font-size:12px;
+font-weight:bold;
+}
+.cat_class {
+font-family:Century Gothic;
+color:#adadad;
+font-size:12px;
+font-weight:bold;
+text-decoration:none;
+}
+.cat_class:hover {
+font-family:Century Gothic;
+color:#adadad;
+font-size:12px;
+font-weight:bold;
+text-decoration:underline;
+}
+.login1 {
+font-family:Century Gothic;
+color:#666666;
+font-size:6px;
+
+}
+.textfield{
+border-width: 1px; border-style: solid; border-color: #999999;
+
+}
+.newsletter {
+font-family:Century Gothic;
+color:#666666;
+font-size:12px;
+font-style:normal;	
+
+}
+.newsletter1 {
+font-family:Century Gothic;
+color:#990000;
+font-size:12px;
+font-style:normal;	
+
+}
+.heading {
+font-family:Century Gothic;
+color:#666666;
+font-size:12px;
+font-weight:bold;	
+}
+
+.link {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+color:#550000;
+text-decoration:none;
+}
+.link:hover {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+text-decoration:underline;
+color:#000;
+}
+.type {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#abaccf;
+}
+.price1 {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+color:#bba057;
+}
+
+.blue_link {
+font-family:Century Gothic;
+font-size:12px;
+color:#10709f;
+text-decoration:none;
+}
+.blue_link:hover {
+font-family:Century Gothic;
+font-size:12px;
+text-decoration:underline;
+color:#10709f;
+}
+.header_menu {
+font-family:Century Gothic;
+font-size:12px;
+text-decoration:none;
+color:#000000;
+
+}
+
+.header_menu:hover {
+font-family:Century Gothic;
+font-size:12px;
+text-decoration:underline;
+color:#000000;
+}
+.header_menu1 {
+font-family:Century Gothic;
+font-size:9px;
+text-decoration:none;
+color:#000000;
+}
+
+.header_menu1:hover {
+font-family:Century Gothic;
+font-size:9px;
+text-decoration:underline;
+color:#000000;
+}
+
+
+/* Start Of Default styles for the html elements in the site */
+
+td
+
+{
+
+    font-size: 11px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    
+    margin:10px;
+	
+
+}
+
+input, select, textarea
+{
+    border: 1px solid #cccccc;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a3 {
+
+    font-family:Arial,Times New Roman;
+
+    color:#000000;
+
+    font-size:12px; 
+
+    Text-decoration:none;
+    font-weight:bolder;
+}
+
+
+
+a3:hover {
+
+    font-family:Arial,Times New Roman;
+
+    color:#000000;
+
+    font-size:12px; 
+
+    Text-decoration:underline;
+   font-weight:bolder;
+}
+
+.showlayer {
+
+	display: block;
+
+}
+
+
+/* End Of Default styles for the html elements in the site */
+
+/* Start Styles for success or failure messages after each user actions. Applicable for both frontend and admin section  */
+
+.greenfont{
+
+    font-size: 13px;
+
+    color:green;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight:bolder;
+
+}
+
+.redfont{
+
+    font-size: 13px;
+
+    color:red;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight:bolder;    
+
+}
+
+/* End Styles for success or failure messages after each user actions. Applicable for both frontend and admin section  */
+
+.errortitle
+{
+    font-size: 13px;
+    color:red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bolder;    
+}
+
+.errsubtitle
+{
+    font-family:Arial,Times New Roman;
+    color:#663333;
+    font-size:12px;
+	font-weight: bolder;
+}
+
+.site_leftban {
+      width: 205px;
+      /*background-color: #ffffff;*/
+      padding-top:10px;
+}
+
+.site_maincontent {
+
+}
+
+.site_rightban {
+	border-left: 1px solid black;
+}
+
+
+.pagelink {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: maroon;
+	text-decoration: none;
+}
+.pagelink:hover {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: red;
+	text-decoration: underline;
+}
+
+.currentpagelink {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: red;
+	text-decoration: none;
+}
+.currentpagelink:hover {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: red;
+	text-decoration: underline;
+}
+
+
+.clickprod {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.clickprod:hover {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #555555;
+	text-decoration: underline;
+}
+
+
+.productlink {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.productlink:hover {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #555555;
+	text-decoration: underline;
+}
+
+
+.loginlink {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #990099;
+	text-decoration: none;
+}
+.loginlink:hover {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #9966CC;
+	text-decoration: underline;
+}
+
+.shipbilllink {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #990099;
+	text-decoration: none;
+}
+.shipbilllink:hover {
+	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #9966cc;
+	text-decoration: underline;
+}
+
+
+.text8 {
+
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: 758A9C;
+	text-decoration: none;
+}
+
+.text8:hover {
+
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: 758A9C;
+	text-decoration: underline;
+}
+
+.text6 {
+	font-family: tahoma;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.text6:hover {
+	font-family: tahoma;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+
+.hidelayer {
+
+	display: none;
+
+}
+
+.bluelink {
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#072B61;
+
+    font-size:12px; 
+
+    Text-decoration:none;
+
+}
+
+
+
+.bluelink:hover {
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#072B61;
+
+    font-size:12px; 
+
+    Text-decoration:underline;
+
+}
+
+.emaillink {
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#072B61;
+
+    font-size:10px; 
+
+    Text-decoration:none;
+
+}
+
+.headingtext {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+	color: #054788;
+
+}
+
+
+
+.headingtext:hover {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+	color: red;
+
+}
+
+.menu {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 15px;
+
+	font-style: italic;
+
+	font-weight: bold;
+
+	color: #D0CDCA;
+
+	width: 20px;
+
+	text-decoration: none;
+
+
+
+}
+
+
+
+
+
+.menu a:hover{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 15px;
+
+	font-style: italic;
+
+	font-weight: bold;
+
+	color: #D0CDCA;
+
+	width: 20px;
+	
+	text-decoration: underline;
+
+
+
+}
+
+.title {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 21px;
+
+	font-style: italic;
+
+	font-weight: bold;
+
+	color: #FF7D2F;
+
+}
+
+.slogan {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+	/* color: #FFFFFF; */
+
+	color:black;
+
+}
+
+.maincontent {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	font-weight: bolder;
+
+	/*color: #1e5288;  D9EBFF */
+
+	color: #FFFFFF;
+
+}
+
+
+
+.maincontentheading,.headerrow {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+	color: #FFFFFF;
+
+	background-color: #A4B5FA;
+
+}
+
+
+.tableborder
+
+{
+
+	border: 1px solid #6A6D75;
+
+}
+
+
+
+.tableborder_new
+
+{
+
+	border: 2px solid #A4B5FA;
+
+}
+
+.tableborder_list
+
+{
+
+	border: 1px solid #adadad;
+
+}
+
+.tableborder_new1 {
+	border: solid 1px #b79a5f;
+	font-size:12px;
+}
+.postaddcontent
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	font-weight: bolder; 
+
+	/* background-color: #2A2A2A; */
+
+	text-decoration: none;
+
+}
+
+.postaddcontent_ans
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	font-weight: normal; 
+
+	/* background-color: #2A2A2A; */
+
+	text-decoration: none;
+
+}
+
+.label,.normal
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+
+.whitefont
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+
+
+.whitefont:hover
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	font-weight: bolder;
+
+	text-decoration: underline;
+
+}
+
+
+
+.whitefont_header
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	color: #FFFFFF;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+
+
+.starcolor,.starfont
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: red;
+
+	font-weight: normal;
+
+}
+
+  
+
+.links{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #1e5288;
+
+	font-weight: bolder;
+
+	text-decoration: underline;
+
+}
+
+
+
+.links:hover{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #1e5288;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+ 
+
+
+
+.blue_link{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #1e5288;
+
+	font-weight: bolder;
+
+	text-decoration: underline;
+
+}
+
+
+
+.blue_link:hover
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: red;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+
+.top_menu_link
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #C9C9C9;
+
+	font-weight: bolder;
+
+	text-decoration: underline; 
+
+} 
+
+
+
+.top_menu_link:hover
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #C9C9C9;
+
+	font-weight: bolder;
+
+	text-decoration: none; 
+
+}
+
+
+p.bodytxt{
+
+    font-size: 11px;
+
+    color:#000000;
+
+    font-family: Arial,Times New Roman;
+
+    text-align:justify;
+
+    font-weight:normal;
+
+    LINE-HEIGHT: 18px
+
+}
+
+p.home_bodytxt{
+
+    font-size: 11px;
+
+    color:#000000;
+
+    font-family: Arial,Times New Roman;
+
+/*    text-align:left;*/
+
+    font-weight:normal;
+
+    LINE-HEIGHT: 28px
+
+}
+
+
+.top_menu_link{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #666666;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+
+
+.top_menu_link:hover{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: red;
+
+	font-weight: bolder;
+
+	text-decoration: underline;
+
+}
+
+
+
+.top_menu_whitelink{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: white;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+
+
+.top_menu_whitelink:hover{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: white;
+
+	font-weight: bolder;
+
+	text-decoration: underline;
+
+}
+
+
+
+
+
+.desc_lable
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	/* font-weight: normal; */
+
+	 font-weight: bolder;  
+
+	 
+
+}
+
+
+
+.desc_lable_ans
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	/* font-weight: normal; */
+
+	 font-weight: none;  
+
+	 
+
+}
+
+
+
+.red_hint_font
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 10px;
+
+	color: red;
+
+	/* font-weight: normal; */
+
+	 font-weight: none;  
+
+	 
+
+}
+
+.desc_link
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: #000000;
+
+	/* font-weight: normal; */
+
+	 font-weight: none;  
+
+	 
+
+}
+
+.desc_link:hover
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 11px;
+
+	color: red;
+
+	/* font-weight: normal; */
+
+	 font-weight: underline;  
+
+	 
+
+}
+
+.desc_prodhead
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 15px;
+
+	color: #000000;
+
+	/* font-weight: normal; */
+
+	 font-weight: bolder;  
+
+	 
+
+}
+
+.desc_cat
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	color: #000000;
+
+	/* font-weight: normal; */
+
+	 font-weight: bolder;  
+
+	 
+
+}
+
+
+
+.maroonlink {
+
+    font-family:Arial,Times New Roman;
+
+    color:#000000;
+
+    font-size:12px; 
+
+    Text-decoration:underline;
+
+}
+
+
+
+.maroonlink:hover {
+
+    font-family:Arial,Times New Roman;
+
+    color:#000000;
+
+    font-size:12px; 
+
+    Text-decoration:none;
+
+}
+
+
+.mediumtxtbox  {
+    width: 150px;
+}
+
+.blackfont_header
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 13px;
+
+	color: #000000;
+
+	font-weight: bolder;
+
+	text-decoration: none;
+
+}
+
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial;
+}
+.maroon3
+{
+	FONT-SIZE: 11px; FONT-FAMILY: Arial; color:#000000; text-decoration:underline;
+}
+.maroon3:hover
+{
+	FONT-SIZE: 11px; FONT-FAMILY: Arial; color:#000000; text-decoration:none;
+}
+
+.maroon4
+{
+	FONT-SIZE: 12px; FONT-FAMILY: Arial; color:#cc0608; text-decoration:underline;
+}
+.maroon4:hover
+{
+	FONT-SIZE: 12px; FONT-FAMILY: Arial; color:#cc0608; text-decoration:none;
+}
+
+.black_hint_font
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 10px;
+
+	color: #000000;
+
+	/* font-weight: normal; */
+
+	 font-weight: none;  
+
+	 
+
+}
+
+.product_price {
+	font-size:12px;
+	font-weight: bold;
+	color:cc0608;
+		
+}
+
+.auth_font
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #660066;
+	/* font-weight: normal; */
+	 font-weight: bolder;  
+ 
+
+}
+.auth_font1
+
+{
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #660066;
+	/* font-weight: normal; */
+	 font-weight: bolder;  
+
+	 
+
+}
+
+.productlink1_new {
+ 	font-family: Arial,tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: maroon;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+.productlink1_new:hover {
+	font-family: Arial,tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #3b88c5;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+.subtitles {
+ 	font-family: Arial,tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #006f91;
+	text-decoration: none;
+	
+}
+.productlink2_new {
+ 	font-family: Arial,tahoma;
+	font-size: 16px;
+	font-weight: bold;
+	color: maroon;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+.mtext {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.ttabbord {
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-left-color: #FFFFFF;
+}
+
+.mtext:hover {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.heading1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	color: #05305A;
+	text-decoration: none;
+}
+.bookconte {
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	line-height: 20px;
+}
+.sell {
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	color: #05305A;
+	text-decoration: underline;
+}
+.conte {
+	font-family: Arial;
+	font-size: 13px;
+	line-height: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+.conteheading {
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 20px;
+	color: #105590;
+	text-decoration: none;
+	font-weight: bold;
+}
+.conteheading1 {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #105590;
+	text-decoration: none;
+	font-weight: bold;
+}
+.contside {
+
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+.tag {
+
+
+	font-family: Arial;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tag:hover {
+
+
+	font-family: Arial;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}.tag2 {
+
+
+
+	font-family: Arial;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.clickher {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #335EA8;
+	text-decoration: none;
+	font-weight: bold;
+}
+.clickher2 {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #335EA8;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.clickher2:hover {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #FF3300;
+	text-decoration: none;
+	font-weight: bold;
+}
+.wholebord {
+	border: 1px solid #275881;
+}
+.top {
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-top-width: 1px;
+}
+.apr {
+	font-family: Arial;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: normal;
+}
+.apr:hover {
+	font-family: Arial;
+	font-size: 11px;
+	color: #FF9933;
+	text-decoration: none;
+	font-weight: normal;
+}
+.testimonial{
+
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: normal;
+}
+.login3
+{
+    font-family:Arial,Times New Roman;
+    color:#193652;
+    font-size:12px;
+	font-weight: bolder;
+}
+
+
+a.categoriecontent{
+	font-family:Arial;
+	font-size:12px;
+	color:#FFFFFF;
+	font-weight:bolder;
+	text-decoration:none;
+}
+a.categoriecontent:hover{
+	font-family:Arial;
+	font-size:12px;
+	color:#df6b11;
+	font-weight:bolder;
+	text-decoration:none;
+}
+a.categorieselect{
+	font-family:Arial;
+	font-size:12px;
+	color:#df6b11;
+	font-weight:bolder;
+	text-decoration:none;
+}
+a.categorieselect:hover{
+	font-family:Arial;
+	font-size:12px;
+	color:#df6b11;
+	font-weight:bolder;
+	text-decoration:none;
+}
+.headingtext{
+	font-family:tahoma;
+	font-size:12px;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-decoration:none;
+}
+.borderbottom{
+	border-bottom:1px dotted #ffffff;
+}
+
+
+
+.pdlistconte{
+	font-family:Arial;
+	font-size:12px;
+	color:#FFFFFF;
+	font-weight:bolder;
+	padding-left:15px;
+	background-color:#A4B5FA;
+}
+.pdlistconte1{
+	font-family:arial;
+	font-size:12px;
+	color:#574c34;
+}
+.pdlistconte2{
+	font-family:arial;
+	font-size:12px;
+	color:#574c34;
+	font-weight:bolder;
+}
+.price{
+	font-family:arial;
+	font-size:12px;
+	color:#FF0000;
+	font-weight:bolder;
+}
+.dotted{
+	border:1px dotted #b79a5f;
+}
+.borderbot{
+	border-bottom:1px solid #b79a5f;
+}
+.border_productdisplay{
+	border:1px dotted #b79a5f;
+}
+.productheadingbg{
+	background-color:#adadad;
+	}
+.currentpagelink{
+	font-family:arial;
+	font-size:12px;
+	color:#b79a5f;
+	font-weight:bolder;
+}
+.formprod{
+	font-family:arial;
+	font-size:12px;
+	color:#000000;
+}
+
+.border_productdisplay{
+	border:1px dotted #b79a5f;
+}
+.border_productdetail{
+	border:1px solid #e6e4e4;
+}
+.productheadingbg{
+	background-color:#adadad;
+	}
+.currentpagelink{
+	font-family:arial;
+	font-size:12px;
+	color:#b79a5f;
+	font-weight:bolder;
+}
+.formprod{
+	font-family:arial;
+	font-size:12px;
+	color:#000000;
+}
+.addcart{
+	font-family:arial;
+	font-size:12px;
+	color:#302626;
+	line-height:22px;
+	text-align:justify;
+}
+.content {
+	font-family: "Courier New", Courier, monospace;
+}
+.content{
+	font-family:tahoma;
+	font-size:12px;
+	color:#201313;
+	line-height:22px;
+	padding-left:3px;
+	padding-right:8px;
+	text-align:justify;
+}
+.contentareamainbg{
+	background-color:#f0e1c2;
+}
+.contentareabgcolor{
+	background-color:#c9b793;
+}
+.secondcontentareabg{
+	background-color:#d5c4a6;
+}
+.addtocart{
+	font-family:arial;
+	font-size:12px;
+	color:#d16304;
+	font-weight:bolder;
+	text-decoration:none;
+}
+a.addtocart:hover{
+	font-family:arial;
+	font-size:12px;
+	color:#d16304;
+	font-weight:bolder;
+	text-decoration:underline;
+}
+
+.dollar{
+	font-family:Arial;
+	font-size:12px;
+	color:#FF0000;
+	font-weight:bolder;
+	padding-left:9px;
+}
+
+.header_menu2 {
+font-family:Century Gothic;
+font-size:12px;
+text-decoration:none;
+color:#006699;
+
+
+}
+
+.header_menu2:hover {
+font-family:Century Gothic;
+font-size:12px;
+text-decoration:underline;
+color:#000000;
+}
+.checkbox_cls{
+border:0;
+}
+.total_price {
+font-family:Century Gothic;
+color:#FF0000;
+font-size:12px;
+font-weight:bold;
+}
+.prescription {
+font-family:Century Gothic;
+color:#666666;
+font-size:10px;
+font-weight:bold;
+}
+
+.normaltext
+{
+	font-family: sans-serif;
+	color:#373737;
+	font-size: 12px;
+	text-transform: none;
+	text-decoration: none;
+}

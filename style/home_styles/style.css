@@ -1,0 +1,144 @@
+/* CSS Document */
+
+.mtext {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.ttabbord {
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-left-color: #FFFFFF;
+}
+
+.mtext:hover {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+	color: #05305A;
+	text-decoration: none;
+}
+.bookconte {
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	line-height: 20px;
+}
+.sell {
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	color: #05305A;
+	text-decoration: underline;
+}
+.conte {
+	font-family: Arial;
+	font-size: 13px;
+	line-height: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+.conteheading {
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 20px;
+	color: #105590;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.contside {
+
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+.tag {
+
+
+	font-family: Arial;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tag:hover {
+
+
+	font-family: Arial;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}.tag2 {
+
+
+
+	font-family: Arial;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.clickher {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #335EA8;
+	text-decoration: none;
+	font-weight: bold;
+}
+.clickher2 {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #335EA8;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.clickher2:hover {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 20px;
+	color: #FF3300;
+	text-decoration: none;
+	font-weight: bold;
+}
+.wholebord {
+	border: 1px solid #275881;
+}
+.top {
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-top-width: 1px;
+}
+.apr {
+	font-family: Arial;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: normal;
+}
+.apr:hover {
+	font-family: Arial;
+	font-size: 11px;
+	color: #FF9933;
+	text-decoration: none;
+	font-weight: normal;
+}

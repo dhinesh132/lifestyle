@@ -1,0 +1,86 @@
+  <!------------------------------------------------------------>
+  <STYLE>
+
+   /*                                                          */
+   /* Styles for the tree.                                     */
+   /*                                                          */
+   SPAN.TreeviewSpanArea A {
+     font-size: 12px; 
+     font-family: verdana,helvetica; 
+     text-decoration: none;
+     color: black;}
+   SPAN.TreeviewSpanArea A:hover {
+     font-size: 12px; 
+     font-family: verdana,helvetica; 
+     text-decoration: none;
+     color: #9966cc;
+	 
+	 }
+
+   /*                                                          */
+   /* Styles for the remainder of the document.                */
+   /*                                                          */
+   BODY {
+    /*  background-color: white; */
+	 
+	 }
+   TD {
+     font-size: 11px; 
+     font-family: verdana,helvetica;}
+
+  </STYLE>
+
+  <SCRIPT src="<?php echo $GLOBALS['site_config']['site_path']; ?>components/treemenu/ua.js"></SCRIPT>
+
+  <!-- Infrastructure code for the TreeView. DO NOT REMOVE.   --><?php 
+  include($GLOBALS['treemenu_pth'] . "components/treemenu/ftiens4.js");
+  
+  if(1==2)
+  {
+  ?>
+  <SCRIPT src="<?php echo $GLOBALS['site_config']['site_path']; ?>components/treemenu/ftiens4.js"></SCRIPT>
+  <?php
+  }
+  ?>
+
+  <!-- Scripts that define the tree. DO NOT REMOVE.   
+          -->
+		  <script>
+		  var company_name = "<?php echo stripslashes($GLOBALS['site_config']['company_name']); ?>";
+		  <?php
+		  $file_name = "demoFramelessNodes_" . $_SESSION['ses_admin_access_level'] . ".js";
+		  include($GLOBALS['treemenu_pth'] . "components/treemenu/" . $file_name);
+		  
+		  //echo $menu_obj->iterate_tree_menus();
+		  
+		  ?>
+		  </script>
+		  <?php require_once("treemenu_select.php"); ?>
+  <!--<SCRIPT src="components/treemenu/demoFramelessNodes.js"></SCRIPT>
+	<!-- <SCRIPT src="components/treemenu/demoFramelessHiliNodes.js"></SCRIPT> -->
+<!-- <div style="overflow: auto; height: 625px; padding: 0px;"> Vertical/horizontal scroll bar should not appear. - 09032007 -->
+    <TABLE cellpadding="0" cellspacing="0" border="0" width="100%">
+     <TR>
+      <TD>
+
+        <TABLE cellspacing="0" cellpadding="0" border="0" width="100%">
+         <TR>
+          <TD valign="top">
+ <TABLE border=0><TR><TD><FONT size=-2><A style="font-size:7pt;text-decoration:none;color:silver" href="http://www.treemenu.net/" target=_blank><!-- Javascript Tree Menu --></A></FONT></TD></TR></TABLE>
+
+ <SPAN class=TreeviewSpanArea>
+  <SCRIPT>initializeDocument()</SCRIPT>
+  <NOSCRIPT>
+   A tree for site navigation will open here if you enable JavaScript in your browser.
+  </NOSCRIPT>
+ </SPAN>
+
+
+          </TD>
+         </TR>
+        </TABLE>
+
+       </TD>
+      </TR>
+     </TABLE>
+<!-- </div> -->

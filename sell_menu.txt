@@ -1,0 +1,8 @@
+&home1=index.php
+&aboutus1=aboutus.php
+&faq1=faq.php
+&policy1=policies.php
+&contactus1=contactus.php
+&testimonial1=testimonial.php
+&login1=order_now.php
+&logout1=logout.php

@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body { background:url(../images/bg.jpg) repeat-x; }
+a:hover { color:#ff6000;}
+a { text-decoration:none;}
+
+#container { width:980px; margin:0 auto; font-family:Verdana, Geneva, sans-serif; color:#807b5f;}
+
+/*HEADER*/
+#header {background:url(../images/header.png) no-repeat; height:175px; width:980px; float:left}
+
+.top {width:980px; height:104px; float:left;}
+#header-left {width:626px; height:79px; float:left; padding-top:25px;}
+
+#header-right {width:354px; height:88px; float:right; padding-top:16px}
+#search{ width:354px; height:30px; margin-bottom:20px;}
+.search { background:url(../images/searc-bar.png); width:198px; height:23px; float:left; padding:7px 3px 0 13px;}
+.cart { width:350px; text-align:right; font-size:12px; font-family:Verdana, Geneva, sans-serif; padding-right:4px;}
+.cart a {color:#807b5f;}
+.cart a:hover{color:#ff6000}
+.cart  em { color:#FF6633; font-style:normal; margin-right:20px}
+
+/*NAVIGATION*/
+.navigation { width:980px; float:left; }
+#nav{ height:24px;  margin: 0 auto; list-style-type:none; padding:16px 0 0 40px;}
+#widget {margin: 0 auto;list-style-type:none;}
+#widget li {float: left; width:120px;}
+#widget li a:link, ul#widget li a:visited {display: block; text-decoration: none;font-size: 14px; font-family:Verdana, Geneva, sans-serif; color:#807b5f; margin-bottom:12px;}
+ul#widget li a:hover { color:#ff6600!important; }
+ul#widget li#selected a:link, ul#widget li#selected a:visited {background: #e0dfd0; text-decoration: none;font-size: 14px;	font-family:Verdana, Geneva, sans-serif;}
+
+
+/*----for navigation dropdown--*/
+#nav ul li.nav_text{position: relative;	z-index:1000;}
+#nav ul li.nav_text ul{display:none; }
+#nav ul li.nav_text:HOVER ul{display:block;	position: absolute;background:#e7deb8;width:153px; height:30px!important}
+#nav ul li.nav_text ul li{display: block;clear: both; background:#f6f5ef; border-bottom: 1px solid #e0dfd0;margin: 0 !important; padding: 0; font-family:Verdana, Geneva, sans-serif; width:153px;
+                          height:30px!important}
+#nav ul li.nav_text ul li:hover{background:#e7deb8; height:30px!important;}	
+#nav ul li.nav_text ul li:hover a{color:#FFFFFF!important; background:#fe9147; height:22px!important; border-bottom: 1px solid #e0dfd0; padding:8px 0 0 8px;}
+#nav ul li.nav_text ul li a{display: block; width:145px; text-align:left; font-size:12px;height:22px!important; padding:8px 0 0 8px; margin:0!important; color:#807b5f; background:#f7f4e7; }
+
+
+
+/*SLIDER*/
+#slider {width:960px; height:357px; float:left; background:#f6f4e6; padding:10px 5px 10px 13px}
+.slider-container { background:#FFFFFF; width:949px; float:left; margin:0; padding:3px 0 3px 3px}
+ul#accordion-slider{;
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ position: relative;
+}
+ul#accordion-slider li{
+ display: block;
+ overflow: hidden;
+ padding: 0;
+ float: left;
+ width: 235px;
+ height: 350px;
+}
+
+/*SELECTION*/
+/* setting the width and height of the SELECT element to match the replacing graphics */
+select.select{
+		position:relative;
+		z-index:10;
+		width:223px !important;
+		height:26px !important;
+		line-height:26px;
+		background: url("../images/arrow.png") no-repeat scroll right center #FFFFFF;
+		border: 1px solid #D4CA9A;
+		margin-bottom: 4px;
+		font-family:Verdana, Geneva, sans-serif; 
+		color:#726640;
+		font-size:12px;
+		padding:2px;
+}
+
+/* dynamically created SPAN, placed below the SELECT */
+span.select{
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:223px;
+	height:26px;
+	line-height:26px;
+	text-indent:10px;
+	background: url("../images/arrow.png") no-repeat scroll right center #FFFFFF;
+	cursor:default;
+	z-index:1;
+	-moz-appearance: none; 
+-webkit-appearance: none;
+appearance: none;
+	}
+
+/*CONTENT*/
+#content{width:980px; float:left; margin-top:10px}
+.title-bar {height:27px; font-family:Verdana, Geneva, sans-serif; font-size:16px; color:#ffffff; padding-top:7px; margin-bottom:10px;}
+.left { width:694px; float:left;}
+
+.brown-bg { width:665px; background:url(../images/bar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 5px 0 24px;}
+.brown-bg li { width:150px; list-style:none; float:left; display:inline; margin:0 10px 10px 0; font-size:12px; font-family:Verdana, Geneva, sans-serif; color:#807b5f; line-height:16px;}
+.brown-bg li strong { font-weight:bold; font-size:12px;}
+.brown-bg li em { color:#ff6000; font-style:normal;}
+
+.brown-bgs { width:665px; background:url(../images/bar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 5px 0 24px;margin-top:10px;}
+.brown-bgs li { width:150px; list-style:none; float:left; display:inline; margin:0 10px 10px 0; font-size:12px; font-family:Verdana, Geneva, sans-serif; color:#807b5f; line-height:16px;}
+.brown-bgs li strong { font-weight:bold; font-size:12px;}
+.brown-bgs li em { color:#ff6000; font-style:normal;}
+
+
+.product-bg { width:150px; height:124px; border:2px #d3ccb1 solid; background:#FFFFFF; margin-bottom:10px;}
+
+.right { width:282px; float:right; padding-left:4px;}
+.sbrown-bg { width:243px; background:url(../images/sbar-bg.png) no-repeat; min-height:198px; height:auto; padding:15px 15px 0 24px; float:left; }
+.orange-bg { width:255px; height:212px; background:url(../images/orange-bg.png) no-repeat; margin-left:6px; float:left; padding:12px 10px 12px 10px;
+             font-family:Verdana, Geneva, sans-serif; font-size:12.5px;margin-top: 10px; }
+.orange-bg h1 { font-size:25px; color:#FFFFFF; font-family:Verdana, Geneva, sans-serif; }
+.orange-bg input { margin-bottom:4px; width:240px; color:#807b5f; height:28; font-size:12px; font-family:Verdana, Geneva, sans-serif;}
+
+/*SIGN IN*/
+#sign-in { background:url(../images/sign-in.png) no-repeat; width:600px; height:225px; margin:0 auto; padding-top:50px; color:#807b5f; font-size:12px;}
+.sign-left {width:330px; float:left; padding-left:30px;}
+.sign-right {width:230px; float:right; padding-left:10px}
+#sign-in h1 {font-family:Verdana, Geneva, sans-serif; font-size:24px; color:#807b5f; line-height:28px; }
+#sign-in input { border:1px #D4CA9A solid;font-family:Verdana, Geneva, sans-serif; color:#807b5f; line-height:16px; width:200px; margin-right:5px; height:20px}
+.sign-right a { color:#807b5f;}
+.sign-left a { color:#FFFFFF;}
+
+
+
+/*FOOTER*/
+#footer {width:940px; height:175px; background:url(../images/fbg.png) repeat-x; float:left; margin-top:20px; padding:20px 20px 20px 20px; }
+#footer li  { width:160px; float:left; font-size:12px; font-family:Verdana, Geneva, sans-serif; line-height:16px;}
+#footer li a {display:inline; color:#807b5f; font-size:12px; font-family:Verdana, Geneva, sans-serif; line-height:16px; text-decoration:none;}
+#footer li a:hover {color:#ff6600;}
+#footer li strong { font-weight:bold; color:#807b5f; font-size:12px; font-family:Verdana, Geneva, sans-serif;  line-height:25px}
+#footer li strong a {color:#807b5f; font-size:12px; font-family:Verdana, Geneva, sans-serif; line-height:25px;}
+
+
+@font-face {
+				font-family:Verdana, Geneva, sans-serif;
+				src: url('../fonts/dinnextltpro-light.eot');
+				src: url('../fonts/dinnextltpro-light.eot?#iefix') format('embedded-opentype'),
+						 url('../fonts/dinnextltpro-light.woff') format('woff'),
+						 url('../fonts/fonts/dinnextltpro-light.ttf') format('truetype'),
+						 url('dinnextltpro-light.svg#dinnextltpro-light') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+	
+
+
+
+

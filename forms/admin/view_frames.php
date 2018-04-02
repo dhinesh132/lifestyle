@@ -1,0 +1,1126 @@
+<?php
+$hid_action = "search";
+$hid_action1 = "clear";
+if(!empty($_SESSION['ses_mrkpaid']))
+{
+unset($_SESSION['ses_mrkpaid']);
+frame_notices("Selected orders has been marked as Paid !!", "greenfont");
+}
+ if(!empty($_SESSION['ses_mrkship']))
+{
+unset($_SESSION['ses_mrkship']);
+frame_notices("Selected orders has been marked as Shipped !!", "greenfont");
+}
+
+?>
+<script language="JavaScript" src="../components/calendar/calendar2.js"></script>
+<script language="JavaScript">
+	
+	/*function check_order_selection(obj,ord_st)
+	{
+		if(ord_st == 1 && obj.checked)
+			obj.checked = false;
+	}*/
+	
+	function check_order_selection(obj,ord_st)
+	{
+		if(ord_st == 1 && obj.checked)
+		{
+			//obj.checked = false;
+		}
+		var hid_obj = null;
+		var pending_ord = 0;
+		var paid_ord = 0;
+		var ship_ord = 0;
+		var c=0;var cc=0;
+		for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+		{
+			//alert(window.document.cust_search_frm.elements[i].name);
+			if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+			{
+				hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+				
+				if(window.document.cust_search_frm.elements[i].checked && hid_obj.value == 1)
+				{
+					paid_ord++;
+				 }	
+				else if(window.document.cust_search_frm.elements[i].checked && hid_obj.value == 0)
+				{
+					pending_ord++;
+				 }	
+				else if(window.document.cust_search_frm.elements[i].checked && hid_obj.value == 2)
+				{
+					ship_ord++;	
+				 }	
+				
+			}
+		}
+		/*alert("Pending Orders :" + pending_ord);
+		alert("Paid Orders :" + paid_ord);
+		alert("Shipping Orders :" + ship_ord);*/
+		
+		if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='0'")
+		{
+		var paid_but_obj = window.document.getElementById('paid_button');
+		var pend_ord_but_obj = window.document.getElementById('pending_orders');
+		}
+		else if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='1'")
+		{
+		var paid_but_obj1 = window.document.getElementById('paid_button1');
+		var paid_ord_but_obj = window.document.getElementById('paid_orders');
+		}
+		else
+		{
+		var paid_but_obj1 = window.document.getElementById('paid_button1');
+		var paid_ord_but_obj = window.document.getElementById('paid_orders');
+		var paid_but_obj = window.document.getElementById('paid_button');
+		var pend_ord_but_obj = window.document.getElementById('pending_orders');
+		}
+		var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+		
+		if((pending_ord > 0 && paid_ord > 0	&& ship_ord > 0) || (pending_ord > 0 && paid_ord > 0) || (pending_ord > 0 && ship_ord > 0) || (paid_ord > 0	&& ship_ord > 0))
+		{
+		  paid_but_obj.className = 'hidelayer';
+		  pend_ord_but_obj.className = 'showlayer';
+		  paid_but_obj1.className = 'hidelayer';
+		  paid_ord_but_obj.className = 'showlayer';
+		}
+		else
+		{
+		if(pending_ord > 0)
+		{
+		  if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='0'")
+		  {	
+		  paid_but_obj.className = 'showlayer';
+		  }
+		  else if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='1'")
+		  {
+		  paid_but_obj1.className = 'hidelayer'; 
+		  paid_ord_but_obj.className = 'hidelayer';
+		  }
+		  else
+			{
+			paid_but_obj.className = 'showlayer';
+			paid_but_obj1.className = 'hidelayer'; 
+		  	paid_ord_but_obj.className = 'showlayer';
+			}	
+		 //del_ord_but_obj.className = 'hidelayer';
+		}
+		else if(paid_ord > 0)
+		{
+			if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='0'")
+		  	{	
+			paid_but_obj.className = 'hidelayer';
+			pend_ord_but_obj.className = 'hidelayer';
+			}
+			 else if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='1'")
+		  	{
+			paid_but_obj1.className = 'showlayer';
+			}
+			else
+			{
+			paid_but_obj.className = 'hidelayer';
+			pend_ord_but_obj.className = 'showlayer';
+			paid_but_obj1.className = 'showlayer';
+			}	
+			
+			//del_ord_but_obj.className = 'showlayer';
+		}
+		else if(ship_ord > 0)
+		{
+		  if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='0'")
+		  {		
+		  paid_but_obj.className = 'hidelayer';
+		  pend_ord_but_obj.className = 'hidelayer';
+		  }
+		  else if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='1'")
+		  {
+		  paid_but_obj1.className = 'hidelayer';
+		  paid_ord_but_obj.className = 'hidelayer';
+		  }
+		  else
+			{
+			 paid_but_obj.className = 'hidelayer';
+		  	 pend_ord_but_obj.className = 'showlayer';
+			 paid_but_obj1.className = 'hidelayer';
+		  	 paid_ord_but_obj.className = 'showlayer';
+			}	  
+		  //del_ord_but_obj.className = 'showlayer';
+		}
+		else
+		{
+			if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='0'")
+		  	{	
+			paid_but_obj.className = 'showlayer';
+			pend_ord_but_obj.className = 'showlayer';
+			}
+			else if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='1'")
+		    {
+			paid_but_obj1.className = 'showlayer';
+			paid_ord_but_obj.className = 'showlayer';
+			}
+			else
+			{
+			paid_but_obj.className = 'showlayer';
+			pend_ord_but_obj.className = 'showlayer';
+			paid_but_obj1.className = 'showlayer';
+			paid_ord_but_obj.className = 'showlayer';
+			}
+			//del_ord_but_obj.className = 'showlayer';
+			
+		    
+		}
+		}
+		
+	}
+	
+	
+	function setbool(vv)
+    {
+	    window.document.cust_search_frm.boolcheck.value=vv;
+	}
+
+    function showvalue1(gt)
+    {
+		var dgt=2;
+	    var isNetscape = false;
+	    if (navigator.appName == "Netscape")
+	    {
+	        isNetscape = true;
+	        document.captureEvents(Event.KEYPRESS);
+	    }
+	    document.onkeypress=CheckKeyPress;
+
+	    function CheckKeyPress(evt)
+	    {
+	        var myKeycode = isNetscape ? evt.which : window.event.keyCode;
+
+	        if ((isNetscape) && (myKeycode == 0)) return true;
+
+	        if (myKeycode > 47 && myKeycode < 58 || myKeycode==8)
+	        {
+
+	            if (window.document.cust_search_frm.boolcheck.value=="0")
+	            {
+	                return true;
+	            }
+	            else
+	            {
+	                if ((dgt == 0) && (myKeycode == 46))
+	                {
+	                	return false;
+	                }
+
+	                if (gt.indexOf(".") > 0)
+	                {
+	                    if (myKeycode == 46)
+	                    	return false;
+
+	                    if (myKeycode == 8)
+	                    	return true;
+
+	                    if ((gt.length -   gt.indexOf(".")) > dgt)
+	                    {
+	                        return false;
+	                    }
+	                }
+	                return true;
+	            }
+	        }
+	        else
+	        {
+	            if(window.document.cust_search_frm.boolcheck.value=="1")
+	            {
+	                return false;
+	            }
+	            else
+	            {
+	                return true;
+	            }
+	        }
+	    }
+}
+
+
+var dtCh= "-";
+var minYear=1900;
+var maxYear=2100;
+var err = 0;
+function isInteger(s){
+    var i;
+    for (i = 0; i < s.length; i++){
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    // All characters are numbers.
+    return true;
+}
+
+function stripCharsInBag(s, bag){
+    var i;
+    var returnString = "";
+    // Search through string's characters one by one.
+    // If character is not in bag, append to returnString.
+    for (i = 0; i < s.length; i++){
+        var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+
+function daysInFebruary (year){
+    // February has 29 days in any year evenly divisible by four,
+    // EXCEPT for centurial years which are not also divisible by 400.
+    return (((year % 4 == 0) && ( (!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28 );
+}
+function DaysArray(n) {
+    for (var i = 1; i <= n; i++) {
+        this[i] = 31
+        if (i==4 || i==6 || i==9 || i==11) {this[i] = 30}
+        if (i==2) {this[i] = 29}
+   }
+   return this
+}
+
+function isDate(dtStr){
+    var m1;
+    var m2;
+    var m3;
+    var daysInMonth = DaysArray(12)
+    var pos1=dtStr.indexOf(dtCh)
+    var pos2=dtStr.indexOf(dtCh,pos1+1)
+    var strYear=dtStr.substring(0,pos1)
+    var strMonth=dtStr.substring(pos1+1,pos2)
+    var strDay=dtStr.substring(pos2+1)
+
+    strYr=strYear
+    if (strDay.charAt(0)=="0" && strDay.length>1) strDay=strDay.substring(1)
+    if (strMonth.charAt(0)=="0" && strMonth.length>1) strMonth=strMonth.substring(1)
+    for (var i = 1; i <= 3; i++) {
+        if (strYr.charAt(0)=="0" && strYr.length>1) strYr=strYr.substring(1)
+    }
+    month=parseInt(strMonth)
+    day=parseInt(strDay)
+    year=parseInt(strYr)
+    if (pos1==-1 || pos2==-1){
+        return false
+    }
+    if (strMonth.length<1 || month<1 || month>12){
+        return false
+    }
+    if (strDay.length<1 || day<1 || day>31 || (month==2 && day>daysInFebruary(year)) || day > daysInMonth[month]){
+        return false
+    }
+    if (strYear.length != 4 || year==0 || year<minYear || year>maxYear){
+         return false
+    }
+    if (dtStr.indexOf(dtCh,pos2+1)!=-1 || isInteger(stripCharsInBag(dtStr, dtCh))==false){
+        return false
+    }
+    return true
+}
+   
+
+function validate() {
+    var startdate=window.document.cust_search_frm.repYear.value + "-" + window.document.cust_search_frm.repMonth.value + "-" + window.document.cust_search_frm.repDay.value;
+    var enddate=window.document.cust_search_frm.repYear1.value + "-" + window.document.cust_search_frm.repMonth1.value + "-" + window.document.cust_search_frm.repDay1.value;
+	
+    var tstartdate=window.document.cust_search_frm.repYear.value + window.document.cust_search_frm.repMonth.value + window.document.cust_search_frm.repDay.value;
+    var tenddate=window.document.cust_search_frm.repYear1.value + window.document.cust_search_frm.repMonth1.value + window.document.cust_search_frm.repDay1.value;
+	
+	if(enddate.length > 2 || startdate.length > 2)
+	{
+     if (startdate=="")
+	{
+			alert("Select From Date");
+			return false;
+    }
+	//alert(startdate);
+   // alert(isDate(startdate));
+    if (isDate(startdate)==false){
+        alert("Select Valid From Date and From date should not be empty !!");
+        return false;
+    }
+     if (enddate=="")
+	{
+			alert("Select To Date");
+			return false;
+    }
+   // alert(isDate(startdate));
+    if (isDate(enddate)==false){
+        alert("Select Valid To Date and To date should not be empty !!");
+        return false;
+    }
+	
+	if(Math.abs(tstartdate) > Math.abs(tenddate)){
+        alert("To date should be greater than from date !!");
+        return false;
+    }
+	
+	//window.document.cust_search_frm.reportdate.value=window.document.cust_search_frm.repMonth.value+window.document.cust_search_frm.repDay.value+window.document.cust_search_frm.repYear.value;
+	//window.document.cust_search_frm.reportdate.value=window.document.cust_search_frm.repYear.value+"-"+window.document.cust_search_frm.repMonth.value+"-"+window.document.cust_search_frm.repDay.value;
+	window.document.cust_search_frm.reportdate.value=startdate;
+	window.document.cust_search_frm.reportdate1.value=enddate;
+	}
+	else
+	{
+		window.document.cust_search_frm.reportdate.value='';
+		window.document.cust_search_frm.reportdate1.value='';
+	}
+    return true;
+} 
+
+function check_orderform(frmobj)
+{
+if(1==2) {
+	var dc = frmobj;
+    error_message = "Errors have occured during the process of your form.\n\nPlease make the following corrections:\n\n";
+	var bool = true;
+
+	if(!validate())
+		bool = false;
+	
+	if(bool && (dc.start_order_num.value.length > 0 || dc.end_order_num.value.length > 0))
+	{
+		if(dc.start_order_num.value.length <= 0 || dc.end_order_num.value.length <= 0)
+		{
+			alert("To search with order number you need to enter both from and to order numbers.\nTo search for a particular order enter same number in both the fields.");
+			bool = false;
+		}
+		else
+		{
+			if(parseInt(dc.start_order_num.value) > parseInt(dc.end_order_num.value))
+			{
+				alert("To order number should be greater than the from order number.");
+				bool = false;
+			}
+		}
+	}
+	
+	return bool;
+}
+}
+
+</script>
+<?php
+
+
+
+$calendar="../components/calendar/cal.gif";
+$yrstr="";
+for ($i=2000;$i<=2050;$i++) 
+{
+    //$sel_txt = ($i == date("Y"))?"selected":"";
+	$yrstr = $yrstr . "<option value='$i'>$i</option>";
+}
+
+?>
+<form name="cust_search_frm" method="post" action="" onSubmit="return check_orderform(window.document.cust_search_frm);">
+
+  <table  align="center" cellpadding="5" cellspacing="0" width="100%" class="tableborder_new">
+    <tr class="maincontentheading"> 
+      <td align="center"><font class="buyerfont">Search Frame </font></td>
+    </tr>
+    <tr> 
+      <td><table align="center" border="0" cellspacing="3" cellpadding="3">
+	  
+		 <!-- <tr valign="top"> 
+            <td width="149" align="right"><font class="whitefont">Color:</font></td>
+            <td width="349"><input type="text" name="color_code" value="<?php echo stripslashes($_SESSION['ses_frame_srch_vars']['color_code']); ?>"  style="height:16px;"></td>
+          </tr>-->
+		  <tr valign="top">
+		    <td align="right"><font class="whitefont">Keyword:</font></td>
+		    <td width="349"><input type="text" name="model_no" value="<?php echo stripslashes($_SESSION['ses_frame_srch_vars']['model_no']); ?>"  style="height:16px;"></td>
+	      </tr>
+		  <tr valign="top"> 
+            <td width="149" align="right"><font class="whitefont">Gender:</font></td>
+            <td width="349"> <?php	  $gen_dd_name = "gen_id";
+				  
+				  $select_option = $_SESSION['ses_frame_srch_vars']['gen_id'];
+				  
+				  $gen_default_selection = false;
+				
+				  
+				  if(file_exists("../includes/gen_dropdown.php"))
+				  
+				  	require_once("../includes/gen_dropdown.php");
+					
+				else
+				
+				  	require_once("includes/gen_dropdown.php");
+				  
+				  ?></td>
+          </tr>
+		  <?php if(1==2) {?>
+		  <tr valign="top"> 
+            <td width="149" align="right"><font class="whitefont">Material:</font></td>
+            <td width="349"> <?php	  $mat_dd_name = "mat_id";
+				  
+				  $select_option = $_SESSION['ses_frame_srch_vars']['mat_id'];
+				  
+				  $frma_default_selection = false;
+				
+				  
+				  if(file_exists("../includes/mat_dropdown.php"))
+				  
+				  	require_once("../includes/mat_dropdown.php");
+					
+				else
+				
+				  	require_once("includes/mat_dropdown.php");
+				  
+				  ?></td>
+          </tr>
+		  <?php
+		  }
+		  ?>
+
+          <tr valign="top">
+            <td align="right"><font class="whitefont">Spring Loaded:</font></td>
+            <td><select name="sprin_loaded">
+              <option value="">Select</option>
+              <option value="0" <?php echo (stripslashes($_SESSION['ses_frame_srch_vars']['sprin_loaded']) == 0)?"selected":""; ?>>No</option>
+              <option value="1" <?php echo (stripslashes($_SESSION['ses_frame_srch_vars']['sprin_loaded']) == 1)?"selected":""; ?>>Yes</option>
+            </select></td>
+          </tr>
+          <tr valign="top"> 
+            <td width="149" align="right"><font class="whitefont">Status:</font></td>
+            <td width="349"> <select name="prod_status">
+			<option value="">Show All Status</option>
+                <option value="product_master.prod_status='0'" <?php echo (stripslashes($_SESSION['ses_frame_srch_vars']['prod_status']) == "product_master.prod_status='0'")?"selected":""; ?>>In-Active</option>
+				<option value="product_master.prod_status='1'" <?php echo (stripslashes($_SESSION['ses_frame_srch_vars']['prod_status']) == "product_master.prod_status='1'")?"selected":""; ?>>Active</option>
+                
+                
+            </select></td>
+          </tr>
+          
+          
+          
+          
+          <tr valign="top"> 
+		  <td><a href="frame_search.php?submit_action=clear"> <img border="0" src="../images/clear.jpg"  name="clear" value="Clear"></a>
+		  <input type="hidden" name="submit_action1"></td>
+		 
+            <td align="right"><input type="image" src="../images/search12.gif"  name="search" value="Search" onclick="form.submit_action.value='search'" /></td>
+            <td width="61" align="right"><input type="hidden" name="submit_action" >			</td>		 
+          </tr>
+      </table></td>
+    </tr>
+    
+	   
+  </table>
+  <?php
+  //echo $_SESSION['ses_frame_srch_qry'];
+  
+  if($_REQUEST['page'] =="home")
+	{
+		/*$qry1 = "select concat(buyer_master.buyer_firstname,'&nbsp;',buyer_master.buyer_lastname) as buyer_name,  customer_master.cust_id, customer_master.cust_create_datetime, customer_master.cust_status, buyer_master.buyer_firstname, buyer_master.buyer_lastname,customer_master.user_id,concat(customer_master.bill_fname,' ',customer_master.bill_lname) as bill_name,concat(customer_master.ship_fname,'&nbsp;',customer_master.ship_lname) as ship_name from customer_master, buyer_master where 1 = 1 and (customer_master.user_id = buyer_master.buyer_id or customer_master.user_id = '-1')"; */
+		
+		$qry1 = "select concat(customer_master.cust_firstname,'&nbsp;',customer_master.cust_lastname) as cust_name, customer_master.cust_id, customer_master.cust_create_datetime, customer_master.cust_status, customer_master.payable_amount, customer_master.cust_firstname, customer_master.cust_lastname from customer_master, customer_master where 1 = 1 and customer_master.user_id = customer_master.cust_id order by customer_master.cust_create_datetime desc";
+				 
+		/*$qry_con = $qry1." and customer_master.cust_status = '".$_REQUEST['cust_status']."' group by customer_master.cust_id desc";  
+		$qry1 = $qry_con; */
+		if(!empty($_SESSION['ses_frame_srch_qry']))
+	 
+	 	 $qry1 = $_SESSION['ses_frame_srch_qry'];
+		
+  }
+  else if(!empty($_SESSION['ses_frame_srch_qry']))
+	 
+	 	$qry1 = $_SESSION['ses_frame_srch_qry'];
+			
+	else 
+	  {
+	  	 /*$qry1 = "select concat(buyer_master.buyer_firstname,'&nbsp;',buyer_master.buyer_lastname) as buyer_name,  customer_master.cust_id, customer_master.cust_create_datetime, customer_master.cust_status, buyer_master.buyer_firstname, buyer_master.buyer_lastname,customer_master.user_id,concat(customer_master.bill_fname,' ',customer_master.bill_lname) as bill_name,concat(customer_master.ship_fname,'&nbsp;',customer_master.ship_lname) as ship_name from customer_master, buyer_master where 1 = 1 and (customer_master.user_id = buyer_master.buyer_id or customer_master.user_id = '-1') group by customer_master.cust_id order by customer_master.cust_create_datetime desc";*/
+		 
+		 $qry1 = "select prod_id,model_no,color_code,size,frame_type,color_id ,prod_status,price,stock_code from  product_master where 1 = 1  order by prod_id desc";
+		 }
+		
+   	//echo $qry1;
+	
+$preview_url="../forms/admin/customers_preview_frm.php";
+ $list_url="customers.php";
+	
+  $paging_cls = new paging($qry1);
+
+  if($paging_cls->num_of_rows > 0)
+  {
+  ?><table align="center">
+  <tr align="center" > <td class=""><h1><font class='starfont'><strong><?php echo $paging_cls->num_of_rows." frame match search criteria"  ?></strong></font> </h1></td></tr></table>
+  <?php
+  }
+  ?>
+  <table align="center" cellpadding="4" cellspacing="0" width="100%" class="tableborder_new">
+    <tr class="maincontentheading"> 
+      <?php if(1==2){ ?><td width="7%"><font class='buyerfont'>Select</font></td><?php }?>
+      <td width="7%"><font class='buyerfont'>Id</font></td>
+      <td width="13%"><font class='buyerfont'>Frame Model</font></td>
+      <td width="12%"><font class='buyerfont'>Color Code</font></td>
+      <td width="12%"><font class='buyerfont'>Stock Code</font></td>
+      <td width="14%" align="center"><font class='buyerfont'>Size</font></td>
+      <td width="14%" align="center"><font class='buyerfont'>Price($)</font></td>
+      <td width="10%"><font class='buyerfont'>Status</font></td>
+      <td width="11%"><font class='buyerfont'>Action</font></td>
+    </tr>
+    <?php
+   
+		for($i=$paging_cls->start_index;$i<$paging_cls->end_index;$i++)
+		
+			{
+		  if(mysql_data_seek($paging_cls->resultset,$i))
+		  {
+		  $data = mysql_fetch_object($paging_cls->resultset);  
+		  
+		  }
+		  else
+		  {
+			unset($data);
+		 }
+		  if(isset($data))
+		  {
+		
+		 if(file_exists("../includes/admin_alternate_color.php"))
+		  include("../includes/admin_alternate_color.php");
+		  else
+		  include("includes/admin_alternate_color.php");
+				
+		?>
+    <tr <?php echo $row_bg_color; ?>  height=30px> 
+      <?php if(1==2) {?><td><input type="checkbox" name="ordnum[]" value="<?php echo $data->cust_id; ?>" onClick="check_order_selection(this,'<?php echo $data->cust_status; ?>');"> 
+        <input type="hidden" id="ord_st<?php echo $data->cust_id; ?>" value="<?php echo $data->cust_status; ?>">      </td><?php }?>
+      <td><a class='blue_link' href="#" onClick="popup_window('basedesign_nh.php?submit_action=preview&id=<?php echo stripslashes($data->prod_id); ?>&url=<?php echo $preview_url; ?>&list_url=<?php echo $list_url; ?>',600,500,'yes','yes')";>
+        <?php	  echo $data->prod_id;	 ?> </a></td>
+      <td>    <?php	  echo $data->model_no;	?>      </td>
+      <td>    <?php	  echo $data->color_code;?>      </td>
+	  <td><?php   echo $data->stock_code;	?> </td>
+	  <td align="center">    <?php	  echo $data->size;	?>      </td>
+      <td align="center"><?php	  echo $data->price;	?>      </td>
+      <td nowrap> 
+        <?php
+	  if($data->prod_status ==0)
+	  echo "In-Active";
+	  else
+	  echo "Active";
+	  ?>      </td>
+      <td nowrap><a href="product_master.php?submit_action=edit&<?php echo $prod_obj->primary_fld; ?>prod_id=<?php echo stripslashes($data->prod_id); ?>"><img src="../images/icon_edit.gif" border=0 title="Edit" alt="Edit" align="absmiddle"></a>&nbsp;&nbsp;<a href="#"><img src="../images/icon_delete.gif" border=0 onclick="delete_record('submit_action=delete&<?php echo $ser_obj->primary_fld;?>=<?php echo $data->prod_id; ?>')" alt="Delete" align="absmiddle"></a>&nbsp;&nbsp;<a href="product_master.php?submit_action=status&id=<?php echo stripslashes($data->prod_id);?>&status=<?php echo stripslashes($data->prod_status);?>&flag=search"><?php if($data->prod_status == 1){ ?><img src="../images/icon_approve.gif" align="absmiddle" title="Inactivate" alt="Inactivate" hspace="3" border="0" style="cursor: hand"><? }else {?><img src="../images/icon_disapprove.gif" align="absmiddle" title="Activate"  alt="Activate" hspace="3" border="0" style="cursor: hand"><?php } ?></a></td>
+    </tr>
+    <?php
+		  }
+		  }
+		  ?>
+    <?php	 
+		  
+if($paging_cls->num_of_rows <= 0)
+
+{
+
+?>
+    <tr> 
+      <td colspan="9" algin='center'> <font class='redfont'>No records found.</font></td>
+    </tr>
+    <?php
+}
+
+?>
+  </table>
+  
+  <?php 
+if($paging_cls->num_of_rows <> 0 	&& (1==2) )
+{
+//echo "Request variable:".stripslashes($_REQUEST['cust_status']);
+?>
+  <?php 
+  if(!empty($_SESSION['ses_frame_srch_qry']) )
+  {
+     if(empty($_SESSION['ses_cust_srch_vars']['cust_status']))
+	  {
+	 
+  ?>
+  		
+  <table width="100%">
+    <tr> 
+	  <td align="center"><table cellpadding="0" cellspacing="0" border="0" ><tr><td><a href="javascript:check_all1();" id="pending_orders"><img align="absmiddle" src="../images/buttons/checkallpendingorders.jpg" border="0" hspace="3"></a></td><td><a href="javascript:check_all2();" id="paid_orders"><img align="absmiddle" src="../images/buttons/checkallpaidorders.jpg" border="0" hspace="3"></a></td><td><a href="javascript:check_all_delete();"><img align="absmiddle" src="../images/buttons/checkallfordelete.jpg" border="0" hspace="3"></a></td><td><a href="javascript:uncheck_all();"><img align="absmiddle" src="../images/buttons/uncheckall.jpg" border="0" hspace="3"></a></td></tr></table></td>
+     
+    <tr>
+       <td align="center" width="100%">
+	   <table width="60%" border="0" cellpadding="0" cellspacing="0">
+          <tr><td width="33%" align="center"><a href="#" id="paid_button"><img align="absmiddle" src="../images/buttons/markaspaid.jpg" onclick="javascript:markaspaid();" border="0" hspace="3" /></a></td>
+          <td width="33%" align="center"><a href="#" id="paid_button1"><img align="absmiddle" src="../images/buttons/markasship.jpg" onClick="javascript:markasshipped();" border="0"></a></td>
+          <td width="33%" align="center"><a href="#" id="del_all_order_button"><img align="absmiddle" src="../images/buttons/deleteselectedorders.jpg" onclick="javascript:delete_selected_orders();" border="0" hspace="3" /></a></td>
+          </tr></table></td>
+	   
+    </tr> 
+ 		 
+    </tr>
+  </table>
+      <?php } else {?>
+    
+  <table width="100%">
+    <tr> 
+	   <td align="center"><table cellpadding="0" cellspacing="3" border="0" ><tr><td><?php if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='0'" && !empty($_SESSION['ses_cust_srch_vars']['cust_status'])) {?><a href="javascript:check_all_1();" id="pending_orders"><img align="absmiddle" src="../images/buttons/checkallpendingorders.jpg" border="0" hspace="3"></a><?php } ?></td><td><?php if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='1'" && !empty($_SESSION['ses_cust_srch_vars']['cust_status'])) { ?><a href="javascript:check_all_2();" id="paid_orders"><img align="absmiddle" src="../images/buttons/checkallpaidorders.jpg" border="0" hspace="3"></a><?php } ?></td><td><a href="javascript:check_all_delete_1();"><img align="absmiddle" src="../images/buttons/checkallfordelete.jpg" border="0" hspace="3"></a></td><td><a href="javascript:uncheck_all();"><img align="absmiddle" src="../images/buttons/uncheckall.jpg" border="0" hspace="3"></a></td><?php if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='2'" && !empty($_SESSION['ses_cust_srch_vars']['cust_status'])){?><td><a href="#" id="del_all_order_button"><img align="absmiddle" src="../images/buttons/deleteselectedorders.jpg" onclick="javascript:delete_selected_orders();" border="0" hspace="3" /></a></td><?php } ?></tr></table></td>
+     
+    <tr>
+	   <td align="center"> 
+	   <table cellspacing="3" cellpadding="0" border="0" ><tr>
+       <td><?php if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='0'" && !empty($_SESSION['ses_cust_srch_vars']['cust_status'])){?><a href="#" id="paid_button"><img align="absmiddle" src="../images/buttons/markaspaid.jpg" onclick="javascript:markaspaid();" border="0" hspace="3" /></a><?php } ?></td>
+	   <td><?php if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='1'" && !empty($_SESSION['ses_cust_srch_vars']['cust_status'])){?><a href="#" id="paid_button1"><img align="absmiddle" src="../images/buttons/markasship.jpg" onClick="javascript:markasshipped();" border="0"></a><?php }?></td>
+	    <?php if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) <> "customer_master.cust_status='2'" && !empty($_SESSION['ses_cust_srch_vars']['cust_status'])){?><td><a href="#" id="del_all_order_button"><img align="absmiddle" src="../images/buttons/deleteselectedorders.jpg" onclick="javascript:delete_selected_orders();" border="0" hspace="3" /></a></td><?php } ?>
+		</tr>
+		</table>
+	  </td>
+    </tr> 
+ 
+    </tr>
+  </table>
+  <?php } } else {
+      if(isset($_REQUEST['page'])) { ?>
+	  
+  <table width="100%" align="center">
+    <tr> 
+	   <td align="center"><table cellpadding="0" cellspacing="0" border="0" ><tr><td><?php if(stripslashes($_REQUEST['cust_status']) == "0") {?><a href="javascript:check_all_1();" id="pending_orders"><img align="absmiddle" src="../images/buttons/checkallpendingorders.jpg" border="0" hspace="3"></a><?php } ?></td><td><?php if(stripslashes($_REQUEST['cust_status']) == "1") { ?><a href="javascript:check_all_2();" id="paid_orders"><img align="absmiddle" src="../images/buttons/checkallpaidorders.jpg" border="0" hspace="3"></a><?php } ?></td><td><a href="javascript:check_all_delete_1();"><img align="absmiddle" src="../images/buttons/checkallfordelete.jpg" border="0" hspace="3"></a></td><td><a href="javascript:uncheck_all();"><img align="absmiddle" src="../images/buttons/uncheckall.jpg" border="0" hspace="3"></a></td></tr></table></td><?php if(stripslashes($_REQUEST['cust_status']) == "2") {?><td><a href="#" id="del_all_order_button"><img align="absmiddle" src="../images/buttons/deleteselectedorders.jpg" onclick="javascript:delete_selected_orders();" border="0" hspace="3" /></a></td><?php } ?></tr>
+    <tr>
+       <td align="center"><table cellspacing="0" cellpadding="0" border="0" ><tr>
+       <td><?php if(stripslashes($_REQUEST['cust_status']) == "0"){?><a href="#" id="paid_button"><img align="absmiddle" src="../images/buttons/markaspaid.jpg" onclick="javascript:markaspaid();" border="0" hspace="3" /></a><?php } ?></td>
+	   <td align="right" colspan="3"><?php if(stripslashes($_REQUEST['cust_status']) == "1"){?><a href="#" id="paid_button1"><img align="absmiddle" src="../images/buttons/markasship.jpg" onClick="javascript:markasshipped();" border="0"></a><?php }?></td><?php if(stripslashes($_REQUEST['cust_status']) <> "2") {?> <td><a href="#" id="del_all_order_button"><img align="absmiddle" src="../images/buttons/deleteselectedorders.jpg" onclick="javascript:delete_selected_orders();" border="0" hspace="3" /></a></td><?php } ?></tr></table></td></tr> 
+ 
+    </tr>
+  </table>
+	  <?php } else {?>
+  <table width="100%">
+    <tr> 
+	  <td align="center"><table cellpadding="0" cellspacing="0" border="0" ><tr><td><a href="javascript:check_all1();" id="pending_orders"><img align="absmiddle" src="../images/buttons/checkallpendingorders.jpg" border="0" hspace="3"></a></td><td><a href="javascript:check_all2();" id="paid_orders"><img align="absmiddle" src="../images/buttons/checkallpaidorders.jpg" border="0" hspace="3"></a></td><td><a href="javascript:check_all_delete();"><img align="absmiddle" src="../images/buttons/checkallfordelete.jpg" border="0" hspace="3"></a></td><td><a href="javascript:uncheck_all();"><img align="absmiddle" src="../images/buttons/uncheckall.jpg" border="0" hspace="3"></a></td></tr></table></td>
+     
+    <tr>
+       <td align="center" width="100%">
+	   <table width="60%" border="0" cellpadding="0" cellspacing="0">
+          <tr><td width="33%" align="center"><a href="#" id="paid_button"><img align="absmiddle" src="../images/buttons/markaspaid.jpg" onclick="javascript:markaspaid();" border="0" hspace="3" /></a></td>
+          <td width="33%" align="center"><a href="#" id="paid_button1"><img align="absmiddle" src="../images/buttons/markasship.jpg" onClick="javascript:markasshipped();" border="0"></a></td>
+          <td width="33%" align="center"><a href="#" id="del_all_order_button"><img align="absmiddle" src="../images/buttons/deleteselectedorders.jpg" onclick="javascript:delete_selected_orders();" border="0" hspace="3" /></a></td>
+          </tr></table></td>
+	   
+    </tr> 
+ 		 
+    </tr>
+  </table>
+ 
+ <?php }
+  }
+ }
+ ?>
+  
+  
+  
+  
+<?php 
+if(1 == 2 && !empty($_SESSION['ses_frame_srch_qry']))
+{
+?>
+
+  <table width="100%">
+    <tr> 
+      <td width="10%" align="left"><a href="#"><img align="absmiddle" src="../images/checkall.jpg" onClick="javascript:check_all();" border="0"></a></td>
+      <td <?php if(empty($_SESSION['ses_cust_srch_vars']['cust_status'])){?> colspan="4" width="90%" <?php }?> align="left"><a href="#"><img align="absmiddle" src="../images/uncheckall.jpg" onClick="javascript:uncheck_all();" border="0"></a></td>
+      <?php if(1==2) {?><td align="right" width="80%"><input type="button"  name="delete " value="Delete All Orders" onClick="javascript:check_all_for_delete();"></td> <?php }?>
+      <?php
+ if(1==1 || stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='0'")
+	{
+ ?>
+      <td align="right" colspan="3" width="80%"><a href="#"><img align="absmiddle" src="../images/markaspaid.jpg" onClick="javascript:markaspaid();" border="0"></a></td>
+      <?php
+ }
+ if(stripslashes($_SESSION['ses_cust_srch_vars']['cust_status']) == "customer_master.cust_status='1'")
+	{
+ ?>
+      <td align="right" colspan="3" width="80%"><a href="#"><img align="absmiddle" src="../images/markaspaid.jpg" onClick="javascript:markasshipped();" border="0"></a></td>
+      <?php
+ }
+ ?>
+    </tr>
+  </table>
+ 
+ <?php
+ }
+ ?>
+<br>
+
+<table cellpadding="0" cellspacing=0 border="0" width="100%"> 
+
+  <tr>
+
+	  <td height=5px>
+
+	  </td>
+
+  </tr>
+
+  <tr> 
+
+    <td align="center" width="33%"> 
+
+      <?php
+$paging_cls->print_prev();
+	?>
+
+    </td>
+	
+
+    <td colspan="3" align="center" width="34%"> 
+
+      <?php
+
+$paging_cls->print_numbered_links();
+
+$paging_cls->print_pages_of();
+	?>
+   </td>
+   
+
+    <td align="center" width="33%"> 
+      <?php
+
+	$paging_cls->print_next();
+
+	?>
+
+    </td>
+
+  </tr>
+
+</table>
+
+
+
+</form>
+<script language="JavaScript">
+function check_all()
+{
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			if(hid_obj.value == 0)
+			window.document.cust_search_frm.elements[i].checked = true;
+			else if(hid_obj.value == 1)
+			window.document.cust_search_frm.elements[i].checked = true;
+		}
+	}
+	
+	var paid_but_obj = window.document.getElementById('paid_button');
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	
+	paid_but_obj.className = 'showlayer';
+
+	del_ord_but_obj.className = 'showlayer';
+}
+
+function uncheck_all()
+{
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			window.document.cust_search_frm.elements[i].checked = false;
+		}
+	}
+	
+	
+}
+function markaspaid()
+{
+var del_process = 0;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			if(window.document.cust_search_frm.elements[i].checked == true)
+			{
+				del_process = 1;
+				break;
+			}
+		}
+	}
+	
+	if(del_process == 0)
+	{
+		alert("Select atleast one orders to be Paid !!");
+	}
+	else
+	{
+	if(confirm('Are you sure to mark the selected orders as paid?\n(Ok=yes, Cancel=No)'))
+		  { 
+		  window.document.cust_search_frm.action='frame_search.php'; 
+		  window.document.cust_search_frm.submit_action.value='mrkpaid'; 
+		  window.document.cust_search_frm.submit();
+		   } 
+	  	 { 
+	  	 return false;
+	   	 }
+	}
+}
+
+function markasshipped()
+{
+	var del_process = 0;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			if(window.document.cust_search_frm.elements[i].checked == true)
+			{
+				del_process = 1;
+				break;
+			}
+		}
+	}
+	
+	if(del_process == 0)
+	{
+		alert("Select atleast one orders to be Ship !!");
+	}
+	else
+	{
+	if(confirm('Are you sure to mark the selected orders as shipped?\n(Ok=yes, Cancel=No)'))
+		  { 
+		  window.document.cust_search_frm.action='frame_search.php';
+		  window.document.cust_search_frm.submit_action.value='mrkship'; 
+		  window.document.cust_search_frm.submit();
+		   } 
+		   
+	  	 { 
+	   return false;
+	    }
+	 }	
+}
+
+function check_all_for_delete()
+{
+if(confirm('Are you sure to want delete all orders?\n(Ok=yes, Cancel=No)'))
+{
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			window.document.cust_search_frm.elements[i].checked = true;
+			window.document.cust_search_frm.action='frame_search.php'; 
+		  	window.document.cust_search_frm.submit_action.value='mrkasdelete'; 
+		 	window.document.cust_search_frm.submit();
+		}
+	}
+}
+}
+
+function delete_record(url)
+{ 
+ doyou = confirm("Do you want to delete this frame? (OK = Yes   Cancel = No)");
+ if (doyou == true)
+ {
+ 	  window.location.href="<?php echo $product_page_url; ?>?" + url;
+ }
+}
+
+
+function check_all_delete()
+{
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+/*
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			
+			if(hid_obj.value == 0)
+*/
+			window.document.cust_search_frm.elements[i].checked = true;
+
+		}
+	}
+	
+
+	var paid_but_obj = window.document.getElementById('paid_button');
+	var paid_but_obj1 = window.document.getElementById('paid_button1');
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	
+	paid_but_obj.className = 'hidelayer';
+	paid_but_obj1.className = 'hidelayer';
+	del_ord_but_obj.className = 'showlayer';
+}
+
+function delete_selected_orders()
+{
+	
+	var del_process = 0;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			if(window.document.cust_search_frm.elements[i].checked == true)
+			{
+				del_process = 1;
+				break;
+			}
+		}
+	}
+	
+	if(del_process == 0)
+	{
+		alert("Select Orders to be deleted !!");
+	}
+	else
+	{
+		 doyou = confirm("Do you want to Delete the selected orders? (OK = Yes   Cancel = No)");
+		 if (doyou == true)
+		 {
+		  	window.document.cust_search_frm.submit_action.value='mrkasdelete'; 
+		 	window.document.cust_search_frm.submit();
+		 }
+	}
+	
+}
+function check_all1()
+{
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			if(hid_obj.value == 0)
+			window.document.cust_search_frm.elements[i].checked = true;
+			else
+			window.document.cust_search_frm.elements[i].checked = false;
+		}
+	}
+	var paid_but_obj = window.document.getElementById('paid_button');
+	var paid_but_obj1 = window.document.getElementById('paid_button1');
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	
+	paid_but_obj.className = 'showlayer';
+	paid_but_obj1.className = 'hidelayer';
+	del_ord_but_obj.className = 'showlayer';
+}
+function check_all2()
+{
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+	
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			
+			if(hid_obj.value == 1 )
+			window.document.cust_search_frm.elements[i].checked = true;
+			else
+			window.document.cust_search_frm.elements[i].checked = false;
+		}
+	}
+	
+	var paid_but_obj1 = window.document.getElementById('paid_button1');
+	var paid_but_obj = window.document.getElementById('paid_button');
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	
+	paid_but_obj1.className = 'showlayer';
+	paid_but_obj.className = 'hidelayer';
+	del_ord_but_obj.className = 'showlayer';
+}
+function search_fun()
+{
+ document.cust_search_frm.submit_action.value='search';
+ 
+}
+function check_all_1()
+{
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			if(hid_obj.value == 0)
+			window.document.cust_search_frm.elements[i].checked = true;
+			else
+			window.document.cust_search_frm.elements[i].checked = false;
+		}
+	}
+	
+	var paid_but_obj = window.document.getElementById('paid_button');
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	
+	paid_but_obj.className = 'showlayer';
+	del_ord_but_obj.className = 'showlayer';	
+	
+}
+function check_all_2()
+{
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+	
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			if(hid_obj.value == 1)
+			window.document.cust_search_frm.elements[i].checked = true;
+			else
+			window.document.cust_search_frm.elements[i].checked = false;
+		}
+	}
+	
+	var paid_but_obj1 = window.document.getElementById('paid_button1');
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	
+	paid_but_obj1.className = 'showlayer';
+	del_ord_but_obj.className = 'showlayer';	
+}
+
+function check_all_delete_1()
+{
+  
+	var hid_obj = null;
+	for(i=0; i < window.document.cust_search_frm.elements.length; i++)
+	{
+		//alert(window.document.cust_search_frm.elements[i].name);
+		if(window.document.cust_search_frm.elements[i].name == "ordnum[]")
+		{
+/*
+			hid_obj = window.document.getElementById("ord_st" + window.document.cust_search_frm.elements[i].value);
+			
+			if(hid_obj.value == 0)
+*/
+			window.document.cust_search_frm.elements[i].checked = true;
+
+		}
+	}
+	
+
+	if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='0'")
+	{
+	var paid_but_obj = window.document.getElementById('paid_button');
+	paid_but_obj.className = 'hidelayer';
+	}
+	else if(window.document.cust_search_frm.cust_status.value == "customer_master.cust_status='1'")
+	{
+	 var paid_but_obj1 = window.document.getElementById('paid_button1');
+	 paid_but_obj1.className = 'hidelayer';
+	}
+	
+	var del_ord_but_obj = window.document.getElementById('del_all_order_button');
+	del_ord_but_obj.className = 'showlayer';
+}
+		
+</script>
